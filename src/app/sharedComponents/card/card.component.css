@@ -1,0 +1,10 @@
+.btn-primary {
+    border-radius: 1px;
+}
+.btn:focus {
+    box-shadow:none;
+}
+
+.card {
+    border-radius: 5px;
+}

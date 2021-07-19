@@ -5,7 +5,7 @@
     <ul class="list-group list-group-flush">
       <button class="btn btn-primary"><li class="list-group-item">{{answersArr[0]}}</li></button>
       <button class="btn btn-primary"><li class="list-group-item">{{answersArr[1]}}</li></button>
-      <button class="btn btn-primary"><li class="list-group-item">{{answersArr[2]}}</li></button>
-      <button class="btn btn-primary"><li class="list-group-item">{{answersArr[3]}}</li></button>
+      <button *ngIf="answersArr[2] != undefined" class="btn btn-primary"><li class="list-group-item">{{answersArr[2]}}</li></button>
+      <button *ngIf="answersArr[3] != undefined" class="btn btn-primary"><li class="list-group-item">{{answersArr[3]}}</li></button>
     </ul>
   </div>
