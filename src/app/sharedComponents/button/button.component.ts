@@ -14,10 +14,9 @@ export class ButtonComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  btnClick(event:Event){
-  let innerText = (event.target as HTMLElement)
-   this.btnClickEmit.emit(innerText)
-   console.log(innerText)
+  btnClick(btn:string){
+   this.btnClickEmit.emit(btn)
+   console.log(btn)
   }
 
 }

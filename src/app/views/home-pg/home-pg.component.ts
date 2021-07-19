@@ -28,13 +28,14 @@ export class HomePgComponent implements OnInit {
     });
 }
 
-btnClickNext (event:Event){
-  this.currentIndex++
-  console.log(this.currentIndex,event)
+btnClickNextOrPrevQuestion (btn:string){
+  if(btn == "Next"){this.currentIndex++}
+  else{
+    this.currentIndex--
+  }
+  
+  console.log(this.currentIndex,btn)
 }
 
-btnClickPrev (){
-  this.currentIndex--
-}
 
 }
