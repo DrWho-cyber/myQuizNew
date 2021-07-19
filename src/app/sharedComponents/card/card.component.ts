@@ -53,9 +53,9 @@ export class CardComponent implements OnInit {
 
   checkAnswer(answer:any){
    if (answer.answer == this.questionObject.correct_answer) {
-    answer.classColorChange = "correct"
+    answer.classColorChange = "correctAnsw"
   console.log(answer)
-   }else { answer.classColorChange = "incorrect"
+   }else { answer.classColorChange = "incorrectAnsw"
    console.log(answer);
    
   }
