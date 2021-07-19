@@ -1,18 +1,29 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from  '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
+import { HomePgComponent } from './views/home-pg/home-pg.component';
+import { NavBarComponent } from './views/nav-bar/nav-bar.component';
+
+import { ProxyHttpService } from './services/proxy-http.service';
+import { CardComponent } from './sharedComponents/card/card.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomePgComponent,
+    NavBarComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ProxyHttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
