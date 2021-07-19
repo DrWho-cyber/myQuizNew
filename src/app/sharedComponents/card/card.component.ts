@@ -19,7 +19,8 @@ export class CardComponent implements OnInit {
   
   
   shuffle(array:any[]) {
-    array.push(this.question.correct_answer);
+    let correctAnswer = {ca: this.question.correct_answer}
+    array.push(correctAnswer);
 
   this.question.incorrect_answers.forEach((element:any) => {
     array.push(element);
