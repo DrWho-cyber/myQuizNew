@@ -6,7 +6,11 @@ import { ProxyHttpService } from 'src/app/services/proxy-http.service';
   templateUrl: './home-pg.component.html',
   styleUrls: ['./home-pg.component.css']
 })
+
+
 export class HomePgComponent implements OnInit {
+  btnArr: string[] = ["Prev", "Next"];
+  currentIndex:number = 0;
   questions:any[] = [];
   constructor(private proxy: ProxyHttpService) { }
 
@@ -22,7 +26,15 @@ export class HomePgComponent implements OnInit {
       console.log(response.results)
       this.questions = response.results;
     });
+}
 
+btnClickNext (event:Event){
+  this.currentIndex++
+  console.log(this.currentIndex,event)
+}
+
+btnClickPrev (){
+  this.currentIndex--
 }
 
 }

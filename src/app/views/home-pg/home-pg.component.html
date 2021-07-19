@@ -1,5 +1,7 @@
 
-
+<div class="btnArea">
+    <app-button (btnClickEmit)="btnClickNext($event)" *ngFor="let btn of btnArr" [btn]="btn"></app-button>
+</div>
 <div class="cardsArea">
-<app-card *ngFor="let question of questions" [question]="question"></app-card>
+<app-card [question]="questions[currentIndex]"></app-card>
 </div>

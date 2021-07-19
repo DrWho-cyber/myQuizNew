@@ -10,13 +10,15 @@ import { NavBarComponent } from './views/nav-bar/nav-bar.component';
 
 import { ProxyHttpService } from './services/proxy-http.service';
 import { CardComponent } from './sharedComponents/card/card.component';
+import { ButtonComponent } from './sharedComponents/button/button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePgComponent,
     NavBarComponent,
-    CardComponent
+    CardComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,
