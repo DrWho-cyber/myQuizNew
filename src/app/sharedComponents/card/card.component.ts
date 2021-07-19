@@ -10,7 +10,7 @@ import { QuestionModel } from 'src/app/models/question.model';
 export class CardComponent implements OnInit {
   @Input()question:any;
   questionObject:QuestionModel = new QuestionModel("","","","");
-  answersArr: [] = [];
+  answersArr: answersArrObjectModel[] = [];
   constructor() { }
 
   ngOnInit(): void {
@@ -52,11 +52,11 @@ export class CardComponent implements OnInit {
   }
 
   checkAnswer(answer:any){
-   if (answer == this.questionObject.correct_answer) {
-    
-  console.log("correct")
-   }else {
-   console.log("incorrect");
+   if (answer.answer == this.questionObject.correct_answer) {
+    answer.classColorChange = "correct"
+  console.log(answer)
+   }else { answer.classColorChange = "incorrect"
+   console.log(answer);
    
   }
 

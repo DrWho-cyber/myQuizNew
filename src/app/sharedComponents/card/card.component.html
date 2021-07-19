@@ -6,9 +6,9 @@
       <button 
       *ngFor="let answer of answersArr" 
       class="btn btn-primary"
-      
+      [ngClass]= "answer.classColorChange"
       (click)="checkAnswer(answer)">
-      <li class="list-group-item">{{answer}}</li>
+      <li class="list-group-item">{{answer.answer}}</li>
     </button>
     </ul>
   </div>
