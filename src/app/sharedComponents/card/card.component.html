@@ -6,8 +6,8 @@
       <button 
       *ngFor="let answer of answersArr" 
       class="btn btn-primary"
-      [ngClass]= "answer.class" 
-      (click)="checkAnswer(answer, answer.class)">
+      
+      (click)="checkAnswer(answer)">
       <li class="list-group-item">{{answer}}</li>
     </button>
     </ul>

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { answersArrObjectModel } from 'src/app/models/answersArrObject.model';
 import { QuestionModel } from 'src/app/models/question.model';
 
 @Component({
@@ -9,8 +10,7 @@ import { QuestionModel } from 'src/app/models/question.model';
 export class CardComponent implements OnInit {
   @Input()question:any;
   questionObject:QuestionModel = new QuestionModel("","","","");
-  answersArr: {answer:string, correct: boolean, class: string}[] = [];
-  
+  answersArr: [] = [];
   constructor() { }
 
   ngOnInit(): void {
@@ -28,11 +28,12 @@ export class CardComponent implements OnInit {
   
   
   shuffle(array:any[]) {
-   
-    array.push(this.question.correct_answer);
-
+    let arrIndex = 0;
+    let answersArrObject:answersArrObjectModel = new answersArrObjectModel(`${this.question.correct_answer}`,true,"");
+    array.push(answersArrObject);
   this.question.incorrect_answers.forEach((element:any) => {
-    array.push(element);
+    let answersArrObject2 = new answersArrObjectModel(`${element}`,false,"");
+    array.push(answersArrObject2);
   });
     var currentIndex = array.length,  randomIndex;
   
@@ -44,17 +45,18 @@ export class CardComponent implements OnInit {
       [array[currentIndex], array[randomIndex]] = [
         array[randomIndex], array[currentIndex]];
     }
-    console.log(array)
+    arrIndex++
+    console.log(array[arrIndex].correct)
     
     return array;
   }
 
-  checkAnswer(answer:any, answerClass:any){
+  checkAnswer(answer:any){
    if (answer == this.questionObject.correct_answer) {
-    answerClass = "correct";
-  console.log("correct", answerClass)
-   }else {answerClass = "incorrect"
-   console.log("incorrect", answerClass);
+    
+  console.log("correct")
+   }else {
+   console.log("incorrect");
    
   }
 
