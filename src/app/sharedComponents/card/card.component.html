@@ -5,8 +5,9 @@
     <ul class="list-group list-group-flush">
       <button 
       *ngFor="let answer of answersArr" 
-      class="btn btn-primary" 
-      (click)="checkAnswer(answer)">
+      class="btn btn-primary"
+      [ngClass]= "answer.class" 
+      (click)="checkAnswer(answer, answer.class)">
       <li class="list-group-item">{{answer}}</li>
     </button>
     </ul>

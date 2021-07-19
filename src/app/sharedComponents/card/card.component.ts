@@ -9,14 +9,13 @@ import { QuestionModel } from 'src/app/models/question.model';
 export class CardComponent implements OnInit {
   @Input()question:any;
   questionObject:QuestionModel = new QuestionModel("","","","");
-  answersArr: any[] = [];
+  answersArr: {answer:string, correct: boolean, class: string}[] = [];
   
   constructor() { }
 
   ngOnInit(): void {
     this.shuffle(this.answersArr);
     this.CheckanswersArrcreat()
-    console.log(this.answersArr[2])
   }
 
  CheckanswersArrcreat(){
@@ -24,14 +23,13 @@ export class CardComponent implements OnInit {
   this.questionObject.incorrect_answer1 = this.question.incorrect_answers[0];
   this.questionObject.incorrect_answer2 = this.question.incorrect_answers[1];
   this.questionObject.incorrect_answer3 = this.question.incorrect_answers[2];
-  console.log(this.questionObject)
   return this.questionObject
  }
   
   
   shuffle(array:any[]) {
    
-    array.push( this.question.correct_answer);
+    array.push(this.question.correct_answer);
 
   this.question.incorrect_answers.forEach((element:any) => {
     array.push(element);
@@ -51,10 +49,14 @@ export class CardComponent implements OnInit {
     return array;
   }
 
-  checkAnswer(answer:any){
+  checkAnswer(answer:any, answerClass:any){
    if (answer == this.questionObject.correct_answer) {
-  console.log("correct")
-   }else {console.log("incorrect")}
+    answerClass = "correct";
+  console.log("correct", answerClass)
+   }else {answerClass = "incorrect"
+   console.log("incorrect", answerClass);
+   
+  }
 
   }
 

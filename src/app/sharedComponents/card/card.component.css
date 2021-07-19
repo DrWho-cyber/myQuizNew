@@ -8,3 +8,10 @@
 .card {
     border-radius: 5px;
 }
+.coorectAnsw {
+    background-color: green;
+}
+
+.incorrectAnsw {
+    background-color: red;
+}
