@@ -51,4 +51,11 @@ export class CardComponent implements OnInit {
     return array;
   }
 
+  checkAnswer(event:Event){
+   if ((event.target as HTMLInputElement).innerHTML == this.questionObject.correct_answer) {
+  console.log("correct")
+   }
+
+  }
+
 }

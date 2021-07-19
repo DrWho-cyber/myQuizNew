@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProxyHttpService } from 'src/app/services/proxy-http.service';
 
 @Component({
@@ -7,7 +7,7 @@ import { ProxyHttpService } from 'src/app/services/proxy-http.service';
   styleUrls: ['./home-pg.component.css']
 })
 export class HomePgComponent implements OnInit {
-  @Input() questions:any[] = [];
+  questions:any[] = [];
   constructor(private proxy: ProxyHttpService) { }
 
   ngOnInit(): void {
