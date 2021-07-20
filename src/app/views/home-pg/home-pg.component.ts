@@ -9,18 +9,11 @@ import { Component, OnInit } from '@angular/core';
 
 
 export class HomePgComponent implements OnInit {
-  title:string ="START";
-  disable:boolean = false 
   
   constructor() { }
 
 ngOnInit(): void {
   
 }
-
-  onClickdisable(){
-   this.disable = true
-   this.title = "STARTED"
-  }
 
 }

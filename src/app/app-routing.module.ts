@@ -7,7 +7,7 @@ import { QuizPgComponent } from './views/home-pg/quiz-pg/quiz-pg.component';
 const routes: Routes = [{path:'', 
 component: HomePgComponent,
 children:[
-  {path:'quiz/:id', 
+  {path:'quiz/:categId/:difficultyId', 
   component:QuizPgComponent}
 ]},
 {path:'about', 

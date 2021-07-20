@@ -8,9 +8,12 @@ import { ProxyHttpService } from 'src/app/services/proxy-http.service';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
+  title:string ="START";
+  disable:boolean = false 
   categoryApiUrl:string = "https://opentdb.com/api_category.php"
   categories:any[] = [];
   currentId:any = 0;
+  currentDifficaltyValue:any;
   constructor(private proxy: ProxyHttpService,
     private route: Router
     ) { }
@@ -28,11 +31,23 @@ export class FormComponent implements OnInit {
     
   }
 
-  onselect(event:Event){
+  onselect1(event:Event){
   this.currentId = event;
-  this.route.navigate(['./quiz/' + this.currentId]);
   console.log(this.currentId)
-  
   }
+
+  onselect2(event:Event){
+    this.currentDifficaltyValue = event;
+    console.log(this.currentId)
+    }
+
+  onClickdisable(){
+    this.disable = true
+    this.title = "STARTED"
+   }
+
+   onStartClick(){
+     this.route.navigate(['./quiz/' + this.currentId + this.currentDifficaltyValue]);
+   }
 
 }
