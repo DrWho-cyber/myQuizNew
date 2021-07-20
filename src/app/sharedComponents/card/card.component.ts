@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { answersArrObjectModel } from 'src/app/models/answersArrObject.model';
 import { QuestionModel } from 'src/app/models/question.model';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-card',
@@ -11,6 +13,7 @@ export class CardComponent implements OnInit {
    _question: any;
   questionObject: QuestionModel = new QuestionModel("", "", "", "");
   answersArr: answersArrObjectModel[] = [];
+  correctAnswers:number = 0;
 
   @Input() set question(event:any){
     if(event){
@@ -71,14 +74,18 @@ export class CardComponent implements OnInit {
         if (element != answer){
         element.clicked = true}
       });
-      console.log(answer)
+      this.correctAnswers++
+      if(this.correctAnswers == 6){
+        Swal.fire(`You Won, You gained: ${this.correctAnswers} Correct Answer`)
+      }
+      
     } else {
       answer.classColorChange = "incorrectAnsw";
       this.answersArr.forEach(element => {
         if (element != answer){
           element.clicked = true}
       });
-      console.log(answer);
+      
 
     }
 

@@ -21,3 +21,12 @@
     background-color: transparent;
     border: none;
 }
+
+h6 {
+    text-align: center;
+    position:relative;
+    margin: auto;
+    top: -40px;
+    left:0px;
+    right: 0px;
+}
