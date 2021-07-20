@@ -9,15 +9,14 @@ import { Component, OnInit } from '@angular/core';
 
 
 export class HomePgComponent implements OnInit {
-  apiUrl:string = "https://opentdb.com/api_category.php"
-  categories:any[] = [];
   title:string ="START";
   disable:boolean = false 
-  constructor() { }
   
-  ngOnInit(): void {
-    
-  }
+  constructor() { }
+
+ngOnInit(): void {
+  
+}
 
   onClickdisable(){
    this.disable = true

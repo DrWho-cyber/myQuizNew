@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProxyHttpService } from 'src/app/services/proxy-http.service';
 
 @Component({
   selector: 'app-form',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
+  categoryApiUrl:string = "https://opentdb.com/api_category.php"
+  categories:any[] = [];
+  
+  constructor(private proxy: ProxyHttpService) { }
 
-  constructor() { }
+  getQuestions(apiUrl: string) {
+    this.proxy.get(apiUrl).subscribe(response => {
+      this.categories = response.trivia_categories;
+    });
+}
 
   ngOnInit(): void {
+    this.getQuestions(this.categoryApiUrl)
   }
 
 }

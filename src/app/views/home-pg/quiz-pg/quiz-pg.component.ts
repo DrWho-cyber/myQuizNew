@@ -7,7 +7,7 @@ import { ProxyHttpService } from 'src/app/services/proxy-http.service';
   styleUrls: ['./quiz-pg.component.css']
 })
 export class QuizPgComponent implements OnInit {
-
+  categoryApiUrl: string = "https://opentdb.com/api_count.php?category=";
   btnArr: string[] = ["Prev", "Next"];
   currentIndex:number = 0;
   questions:any[] = [];
@@ -18,10 +18,8 @@ export class QuizPgComponent implements OnInit {
   }
 
   getQuestions(apiUrl: string) {
-    let apiUrlbase: string = "https://opentdb.com/api.php?amount=10";
-    
-    console.log(apiUrlbase)
-    this.proxy.get(`${apiUrlbase}`).subscribe(response => {
+    console.log(apiUrl)
+    this.proxy.get(apiUrl).subscribe(response => {
       console.log(response.results)
       this.questions = response.results;
     });
