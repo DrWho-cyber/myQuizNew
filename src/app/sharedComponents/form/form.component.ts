@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProxyHttpService } from 'src/app/services/proxy-http.service';
 
 @Component({
@@ -10,7 +11,9 @@ export class FormComponent implements OnInit {
   categoryApiUrl:string = "https://opentdb.com/api_category.php"
   categories:any[] = [];
   currentId:any = 0;
-  constructor(private proxy: ProxyHttpService) { }
+  constructor(private proxy: ProxyHttpService,
+    private route: Router
+    ) { }
 
   getQuestions(apiUrl: string) {
     this.proxy.get(apiUrl).subscribe(response => {
@@ -26,8 +29,10 @@ export class FormComponent implements OnInit {
   }
 
   onselect(event:Event){
-  this.currentId = event
+  this.currentId = event;
+  this.route.navigate(['./quiz/' + this.currentId]);
   console.log(this.currentId)
+  
   }
 
 }

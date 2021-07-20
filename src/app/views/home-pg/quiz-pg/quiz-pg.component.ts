@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ProxyHttpService } from 'src/app/services/proxy-http.service';
 
 @Component({
@@ -7,14 +8,17 @@ import { ProxyHttpService } from 'src/app/services/proxy-http.service';
   styleUrls: ['./quiz-pg.component.css']
 })
 export class QuizPgComponent implements OnInit {
-  categoryApiUrl: string = "https://opentdb.com/api_count.php?category=";
   btnArr: string[] = ["Prev", "Next"];
   currentIndex:number = 0;
   questions:any[] = [];
-  constructor(private proxy: ProxyHttpService) { }
+  constructor(private proxy: ProxyHttpService,
+    private actRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.getQuestions("https://opentdb.com/api.php?amount=10")
+    this.actRoute.params.subscribe(params =>{
+      this.getQuestions("https://opentdb.com/api.php?amount=10&category=" + params.id)
+      console.log(params.id)
+    })
   }
 
   getQuestions(apiUrl: string) {

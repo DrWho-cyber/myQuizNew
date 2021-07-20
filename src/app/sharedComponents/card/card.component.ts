@@ -13,9 +13,11 @@ export class CardComponent implements OnInit {
   answersArr: answersArrObjectModel[] = [];
 
   @Input() set question(event:any){
+    if(event){
     this._question = event;
     this.shuffle(this.answersArr);
     this.CheckanswersArrcreat()
+    }
   };
 
   get question(){
