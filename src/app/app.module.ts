@@ -14,6 +14,7 @@ import { ButtonComponent } from './sharedComponents/button/button.component';
 import { AboutComponent } from './views/about/about.component';
 import { QuizPgComponent } from './views/home-pg/quiz-pg/quiz-pg.component';
 import { FormComponent } from './sharedComponents/form/form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FormComponent } from './sharedComponents/form/form.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [ProxyHttpService],
   bootstrap: [AppComponent]

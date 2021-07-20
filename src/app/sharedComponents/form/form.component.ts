@@ -9,22 +9,25 @@ import { ProxyHttpService } from 'src/app/services/proxy-http.service';
 export class FormComponent implements OnInit {
   categoryApiUrl:string = "https://opentdb.com/api_category.php"
   categories:any[] = [];
-  currentId:number = 0;
+  currentId:any = 0;
   constructor(private proxy: ProxyHttpService) { }
 
   getQuestions(apiUrl: string) {
     this.proxy.get(apiUrl).subscribe(response => {
       this.categories = response.trivia_categories;
     });
+    
+    console.log(this.categories)
 }
 
   ngOnInit(): void {
     this.getQuestions(this.categoryApiUrl)
+    
   }
 
   onselect(event:Event){
-  let id = (event.target as HTMLElement)
-  console.log(this.currentId, id)
+  this.currentId = event
+  console.log(this.currentId)
   }
 
 }
