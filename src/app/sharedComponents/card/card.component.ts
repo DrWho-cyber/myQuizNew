@@ -76,7 +76,9 @@ export class CardComponent implements OnInit {
       });
       this.correctAnswers++
       if(this.correctAnswers == 6){
-        Swal.fire(`You Won, You gained: ${this.correctAnswers} Correct Answer`)
+        Swal.fire({
+        icon: 'success',
+        text: `You Won, You gained: ${this.correctAnswers} Correct Answer`})
       }
       
     } else {
