@@ -1,12 +1,12 @@
 <div class="card" style="width: 18rem;">
     <div class="card-header" [innerHTML]="question?.question">
-     
     </div>
     <ul class="list-group list-group-flush">
       <button 
       *ngFor="let answer of answersArr" 
       class="btn btn-primary"
       [ngClass]= "answer.classColorChange"
+      [disabled]="getAnyBtnClicked()"
       (click)="checkAnswer(answer)">
       <li class="list-group-item">{{answer.answer}}</li>
     </button>

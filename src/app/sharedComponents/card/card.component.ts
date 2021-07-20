@@ -18,6 +18,7 @@ export class CardComponent implements OnInit {
     this.shuffle(this.answersArr);
     this.CheckanswersArrcreat()
     }
+    this.answersArr = []
   };
 
   get question(){
@@ -40,10 +41,10 @@ export class CardComponent implements OnInit {
 
   shuffle(array: any[]) {
     let arrIndex = 0;
-    let answersArrObject: answersArrObjectModel = new answersArrObjectModel(`${this.question.correct_answer}`, true, "");
+    let answersArrObject: answersArrObjectModel = new answersArrObjectModel(`${this.question.correct_answer}`, true, "", false);
     array.push(answersArrObject);
     this.question.incorrect_answers.forEach((element: any) => {
-      let answersArrObject2 = new answersArrObjectModel(`${element}`, false, "");
+      let answersArrObject2 = new answersArrObjectModel(`${element}`, false, "", false);
       array.push(answersArrObject2);
     });
     var currentIndex = array.length, randomIndex;
@@ -67,19 +68,23 @@ export class CardComponent implements OnInit {
       answer.classColorChange = "correctAnsw";
       this.answersArr.forEach(element => {
         if (element != answer){
-        element.classColorChange = "transparansy"}
+        element.clicked = true}
       });
       console.log(answer)
     } else {
       answer.classColorChange = "incorrectAnsw";
       this.answersArr.forEach(element => {
         if (element != answer){
-          element.classColorChange = "transparansy"}
+          element.clicked = true}
       });
       console.log(answer);
 
     }
 
+  }
+
+  getAnyBtnClicked(clicked:boolean){
+    return clicked
   }
 
 }
