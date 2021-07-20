@@ -64,10 +64,18 @@ export class CardComponent implements OnInit {
 
   checkAnswer(answer: any) {
     if (answer.answer == this.questionObject.correct_answer) {
-      answer.classColorChange = "correctAnsw"
+      answer.classColorChange = "correctAnsw";
+      this.answersArr.forEach(element => {
+        if (element != answer){
+        element.classColorChange = "transparansy"}
+      });
       console.log(answer)
     } else {
-      answer.classColorChange = "incorrectAnsw"
+      answer.classColorChange = "incorrectAnsw";
+      this.answersArr.forEach(element => {
+        if (element != answer){
+          element.classColorChange = "transparansy"}
+      });
       console.log(answer);
 
     }

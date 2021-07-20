@@ -16,3 +16,8 @@
 .incorrectAnsw {
     background-color: red;
 }
+
+.transparansy {
+    background-color: transparent;
+    border: none;
+}
