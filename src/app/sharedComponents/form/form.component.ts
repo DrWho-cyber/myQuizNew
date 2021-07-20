@@ -38,7 +38,7 @@ export class FormComponent implements OnInit {
 
   onselect2(event:Event){
     this.currentDifficaltyValue = event;
-    console.log(this.currentId)
+    console.log(this.currentDifficaltyValue)
     }
 
   onClickdisable(){
@@ -47,7 +47,6 @@ export class FormComponent implements OnInit {
    }
 
    onStartClick(){
-     this.route.navigate(['./quiz/' + this.currentId + this.currentDifficaltyValue]);
+     this.route.navigate(['./quiz/' + this.currentId + "/" + this.currentDifficaltyValue]);
    }
-
 }

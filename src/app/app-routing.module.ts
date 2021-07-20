@@ -19,3 +19,4 @@ component: AboutComponent}
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
