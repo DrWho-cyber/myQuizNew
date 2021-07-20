@@ -11,6 +11,9 @@ import { NavBarComponent } from './views/nav-bar/nav-bar.component';
 import { ProxyHttpService } from './services/proxy-http.service';
 import { CardComponent } from './sharedComponents/card/card.component';
 import { ButtonComponent } from './sharedComponents/button/button.component';
+import { AboutComponent } from './views/about/about.component';
+import { QuizPgComponent } from './views/home-pg/quiz-pg/quiz-pg.component';
+import { FormComponent } from './sharedComponents/form/form.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { ButtonComponent } from './sharedComponents/button/button.component';
     HomePgComponent,
     NavBarComponent,
     CardComponent,
-    ButtonComponent
+    ButtonComponent,
+    AboutComponent,
+    QuizPgComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,

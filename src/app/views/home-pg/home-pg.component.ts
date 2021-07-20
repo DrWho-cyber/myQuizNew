@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProxyHttpService } from 'src/app/services/proxy-http.service';
+
 
 @Component({
   selector: 'app-home-pg',
@@ -9,33 +9,19 @@ import { ProxyHttpService } from 'src/app/services/proxy-http.service';
 
 
 export class HomePgComponent implements OnInit {
-  btnArr: string[] = ["Prev", "Next"];
-  currentIndex:number = 0;
-  questions:any[] = [];
-  constructor(private proxy: ProxyHttpService) { }
-
-  ngOnInit(): void {
-    this.getQuestions("https://opentdb.com/api.php?amount=10")
-  }
-
-  getQuestions(apiUrl: string) {
-    let apiUrlbase: string = "https://opentdb.com/api.php?amount=10";
-    
-    console.log(apiUrlbase)
-    this.proxy.get(`${apiUrlbase}`).subscribe(response => {
-      console.log(response.results)
-      this.questions = response.results;
-    });
-}
-
-btnClickNextOrPrevQuestion (btn:string){
-  if(btn == "Next"){this.currentIndex++}
-  else{
-    this.currentIndex--
-  }
+  apiUrl:string = "https://opentdb.com/api_category.php"
+  categories:any[] = [];
+  title:string ="START";
+  disable:boolean = false 
+  constructor() { }
   
-  console.log(this.currentIndex,btn)
-}
+  ngOnInit(): void {
+    
+  }
 
+  onClickdisable(){
+   this.disable = true
+   this.title = "STARTED"
+  }
 
 }

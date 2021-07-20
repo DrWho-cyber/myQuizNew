@@ -1,0 +1,26 @@
+.cardsArea {
+    position:absolute;
+    margin: auto;
+    top: 340px;
+    left:0px;
+    right: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btnArea {
+    width: 30%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: 30px auto;
+    left:0px;
+    right: 0px;
+    z-index: 1;
+}
+
+.btn:focus {
+    box-shadow: none;
+}

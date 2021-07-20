@@ -1,0 +1,42 @@
+
+.navbar{
+    z-index: 2;
+}
+
+.navbar-brand {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.nav-item {
+    margin-left: 30px;
+    box-shadow: 4px 4px 4px 1px rgba(250, 103, 255, 0.829);
+    border-radius: 5px;
+    padding: 5px;
+    
+}
+
+.link {
+  text-decoration: none;
+  
+  
+}
+
+.font-effect-fire {
+    letter-spacing: 2px;
+    font-size: 15px;
+    text-shadow: 0 -0.05em 0.2em #fff, 0.01em -0.02em 0.15em rgb(214, 201, 12), 0.01em -0.05em 0.15em rgb(223, 180, 12), 0.02em -0.15em 0.2em rgb(204, 126, 10), 0.04em -0.2em 0.3em rgb(216, 106, 10), 0.05em -0.25em 0.4em rgb(207, 103, 13), 0.06em -0.2em 0.9em rgb(214, 81, 14), 0.1em -0.1em 1em rgb(216, 69, 15);
+}
+
+.font-effect-fire:hover{
+font-weight: 600;
+   color: rgb(255, 243, 134);
+}
+
+.active {
+    color: rgb(255, 243, 134);
+    font-weight: 600;
+    text-shadow: 0 -0.05em 0.2em #fff, 0.01em -0.02em 0.15em rgb(214, 201, 12), 0.01em -0.05em 0.15em rgb(223, 180, 12), 0.02em -0.15em 0.2em rgb(204, 126, 10), 0.04em -0.2em 0.3em rgb(216, 106, 10), 0.05em -0.25em 0.4em rgb(207, 103, 13), 0.06em -0.2em 0.9em rgb(214, 81, 14), 0.1em -0.1em 1em rgb(216, 69, 15);
+}
+
+

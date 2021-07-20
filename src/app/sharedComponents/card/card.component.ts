@@ -16,6 +16,7 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
     this.shuffle(this.answersArr);
     this.CheckanswersArrcreat()
+    console.log("question " +  this.question, this.question.question)
   }
 
  CheckanswersArrcreat(){

@@ -1,7 +1,9 @@
+<div class="formArea">
+    <app-form></app-form>
+</div>
 
-<div class="btnArea">
-    <app-button (btnClickEmit)="btnClickNextOrPrevQuestion(btn)" *ngFor="let btn of btnArr" [btn]="btn"></app-button>
+<div class="startArea">
+    <button (click)="onClickdisable()" [innerHTML]="title" [disabled]="disable" class="btn btn-danger" routerLink="/quiz"></button>
 </div>
-<div class="cardsArea">
-<app-card [question]="questions[currentIndex]"></app-card>
-</div>
+
+<router-outlet></router-outlet>

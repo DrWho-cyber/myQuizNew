@@ -1,23 +1,12 @@
-.cardsArea {
-    position:absolute;
-    margin: auto;
-    top:0px;
-    bottom:0px;
-    left:0px;
-    right: 0px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
+.startArea, .formArea {
+    width: 50%;
+    margin: auto;   
+    margin-top: 50px;
+    text-align: center;
 }
 
-.btnArea {
-    width: 30%;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    margin: 30px auto;
-    left:0px;
-    right: 0px;
-    z-index: 1;
+.btn-danger {
+    width: 10rem;
+    letter-spacing: 3px;
+    font-weight: 700;
 }
