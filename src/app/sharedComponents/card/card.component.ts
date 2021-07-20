@@ -83,8 +83,8 @@ export class CardComponent implements OnInit {
 
   }
 
-  getAnyBtnClicked(clicked:boolean){
-    return clicked
+  getClicked(){
+    return this.answersArr.find(x => x.clicked)
   }
 
 }

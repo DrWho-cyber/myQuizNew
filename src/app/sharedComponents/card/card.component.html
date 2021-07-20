@@ -6,7 +6,7 @@
       *ngFor="let answer of answersArr" 
       class="btn btn-primary"
       [ngClass]= "answer.classColorChange"
-      [disabled]="getAnyBtnClicked()"
+      [disabled]="getClicked()"
       (click)="checkAnswer(answer)">
       <li class="list-group-item">{{answer.answer}}</li>
     </button>
