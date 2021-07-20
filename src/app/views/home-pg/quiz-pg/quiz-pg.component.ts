@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
 export class QuizPgComponent implements OnInit {
   btnArr: string[] = ["Next"];
   currentIndex: number = 0;
-  questions: any[] = [];
+  questions: string[] = [];
   constructor(private proxy: ProxyHttpService,
     private actRoute: ActivatedRoute) { }
 
