@@ -1,7 +1,8 @@
-<div class="categoriesArea">
+<form #form="ngForm">
+<div class="categoriesArea" aria-required="true">
     <div class="input-group mb-3">
         <label class="input-group-text" for="inputGroupSelect01">Choose category</label>
-        <select [(ngModel)]="currentId" (ngModelChange)="onselect1($event)" class="form-select" id="inputGroupSelect01">
+        <select required [ngModelOptions]="{standalone: true}" [(ngModel)]="currentId" class="form-select" id="inputGroupSelect01">
             <option  *ngFor="let category of categories; let i = index" [ngValue]="category.id">{{category.name}}
             </option>
         </select>
@@ -9,9 +10,9 @@
 </div>
 
 <div class="categoriesArea">
-    <div class="input-group mb-3">
+    <div class="input-group mb-3" aria-required="true">
         <label class="input-group-text" for="inputGroupSelect01">Choose difficalty</label>
-        <select [(ngModel)]="currentDifficaltyValue" (ngModelChange)="onselect2($event)" class="form-select" id="inputGroupSelect01">
+        <select required [ngModelOptions]="{standalone: true}" [(ngModel)]="currentDifficaltyValue" class="form-select" id="inputGroupSelect01">
             <option value="easy">Easy</option>
             <option value="medium">Medium</option>
             <option value="hard">Hard</option>
@@ -21,5 +22,7 @@
 
 
 <div class="startArea">
-    <button (click)="onClickdisable()" [innerHTML]="title" [disabled]="disable" class="btn btn-danger" routerLink="/quiz"></button>
+    <button (click)="onStartClick()" [innerHTML]="title" [disabled]="!form.valid" class="btn btn-danger" routerLink="/quiz"></button>
 </div>
+
+</form>

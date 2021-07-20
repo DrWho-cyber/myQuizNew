@@ -9,7 +9,6 @@ import { ProxyHttpService } from 'src/app/services/proxy-http.service';
 })
 export class FormComponent implements OnInit {
   title:string ="START";
-  disable:boolean = false 
   categoryApiUrl:string = "https://opentdb.com/api_category.php"
   categories:any[] = [];
   currentId:any = 0;
@@ -31,22 +30,8 @@ export class FormComponent implements OnInit {
     
   }
 
-  onselect1(event:Event){
-  this.currentId = event;
-  console.log(this.currentId)
-  }
-
-  onselect2(event:Event){
-    this.currentDifficaltyValue = event;
-    console.log(this.currentDifficaltyValue)
-    }
-
-  onClickdisable(){
-    this.disable = true
-    this.title = "STARTED"
-   }
-
    onStartClick(){
-     this.route.navigate(['./quiz/' + this.currentId + "/" + this.currentDifficaltyValue]);
+     this.title = "STARTED"
+     this.route.navigate([`./quiz/${this.currentId}/${this.currentDifficaltyValue}`]);
    }
 }
