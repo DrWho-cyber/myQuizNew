@@ -12,6 +12,7 @@ export class FormComponent implements OnInit {
   categoryApiUrl:string = "https://opentdb.com/api_category.php"
   categories:any[] = [];
   currentId:any = 0;
+  currentType: any;
   currentDifficaltyValue:any;
   constructor(private proxy: ProxyHttpService,
     private route: Router
@@ -32,6 +33,6 @@ export class FormComponent implements OnInit {
 
    onStartClick(){
      this.title = "STARTED"
-     this.route.navigate([`./quiz/${this.currentId}/${this.currentDifficaltyValue}`]);
+     this.route.navigate([`./quiz/${this.currentId}/${this.currentDifficaltyValue}/${this.currentType}`]);
    }
 }

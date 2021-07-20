@@ -16,7 +16,7 @@ export class QuizPgComponent implements OnInit {
 
   ngOnInit(): void {
     this.actRoute.params.subscribe(params =>{
-      this.getQuestions(`https://opentdb.com/api.php?amount=10&category=${params.categId}&difficulty=${params.difficultyId}`)
+      this.getQuestions(`https://opentdb.com/api.php?amount=10&category=${params.categId}&difficulty=${params.difficultyId}&type=${params.type}`)
     })
   }
 

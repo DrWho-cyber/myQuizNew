@@ -1,13 +1,14 @@
 .cardsArea {
     position:absolute;
     margin: auto;
-    top: 340px;
+    top: 370px;
     left:0px;
     right: 0px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    text-align: center;
 }
 
 .btnArea {
