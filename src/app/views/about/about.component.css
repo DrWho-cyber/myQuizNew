@@ -6,4 +6,15 @@ h1 {
 
 a {
     text-decoration: none;
+    transition: 0.7s;
+}
+
+a:hover {
+    color: #FF5733;
+}
+
+@media only screen and (max-width: 800px){
+    h1 {
+        line-height: 40px;
+    }
 }

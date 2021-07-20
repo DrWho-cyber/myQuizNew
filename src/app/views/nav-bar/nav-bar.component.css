@@ -18,25 +18,31 @@
 
 .link {
   text-decoration: none;
-  
-  
+  color: rgb(255, 243, 134);
 }
 
 .font-effect-fire {
     letter-spacing: 2px;
     font-size: 15px;
-    text-shadow: 0 -0.05em 0.2em #fff, 0.01em -0.02em 0.15em rgb(214, 201, 12), 0.01em -0.05em 0.15em rgb(223, 180, 12), 0.02em -0.15em 0.2em rgb(204, 126, 10), 0.04em -0.2em 0.3em rgb(216, 106, 10), 0.05em -0.25em 0.4em rgb(207, 103, 13), 0.06em -0.2em 0.9em rgb(214, 81, 14), 0.1em -0.1em 1em rgb(216, 69, 15);
+    text-shadow: 0 -0.05em 0.2em #fff, 0.01em -0.02em 0.15em rgb(175, 165, 27), 0.01em -0.05em 0.15em rgb(172, 141, 17), 0.02em -0.15em 0.2em rgb(158, 98, 9), 0.04em -0.2em 0.3em rgb(160, 78, 6), 0.05em -0.25em 0.4em rgb(133, 65, 5), 0.06em -0.2em 0.9em rgb(167, 67, 17), 0.1em -0.1em 1em rgb(168, 52, 10);
 }
 
 .font-effect-fire:hover{
 font-weight: 600;
-   color: rgb(255, 243, 134);
 }
 
 .active {
     color: rgb(255, 243, 134);
     font-weight: 600;
-    text-shadow: 0 -0.05em 0.2em #fff, 0.01em -0.02em 0.15em rgb(214, 201, 12), 0.01em -0.05em 0.15em rgb(223, 180, 12), 0.02em -0.15em 0.2em rgb(204, 126, 10), 0.04em -0.2em 0.3em rgb(216, 106, 10), 0.05em -0.25em 0.4em rgb(207, 103, 13), 0.06em -0.2em 0.9em rgb(214, 81, 14), 0.1em -0.1em 1em rgb(216, 69, 15);
+    text-shadow: 0 -0.05em 0.2em #fff, 0.01em -0.02em 0.15em rgb(190, 181, 42), 0.01em -0.05em 0.15em rgb(172, 142, 24), 0.02em -0.15em 0.2em rgb(165, 105, 16), 0.04em -0.2em 0.3em rgb(168, 85, 12), 0.05em -0.25em 0.4em rgb(155, 77, 9), 0.06em -0.2em 0.9em rgb(187, 75, 19), 0.1em -0.1em 1em rgb(194, 62, 14);
 }
 
+
+@media only screen and (max-width: 800px){
+    .nav-item {
+        margin-left: 2px;
+        width: 30%;
+        text-align: center;
+    }
+}
 

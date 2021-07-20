@@ -1,5 +1,6 @@
 .btn-primary {
-    border-radius: 1px;
+    border-radius: 2px;
+    box-shadow: 0 3px 10px rgba(176, 220, 255, 0.952);
 }
 .btn:focus {
     box-shadow:none;
@@ -7,14 +8,18 @@
 
 .card {
     border-radius: 5px;
+    -moz-box-shadow:    3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow:         3px 3px 5px 6px #ccc;
+  font-family: "Trirong", serif;
 }
 
 .correctAnsw {
-    background-color: green;
+    background-color: #03C03C;
 }
 
 .incorrectAnsw {
-    background-color: red;
+    background-color: #FF0800;
 }
 
 .transparansy {
@@ -29,8 +34,17 @@ h6 {
     top: -20px;
     left:0px;
     right: 0px;
+    font-family: "Trirong", serif;
 }
 
 .btn-secondary {
     margin:20px auto;
+    font-family: "Trirong", serif;
+}
+
+.questionsInf p {
+    margin-top: 15px;
+    margin-bottom: 4px;
+    font-weight: 500;
+    font-family: "Trirong", serif;
 }

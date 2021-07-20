@@ -1,20 +1,28 @@
+
+
 <div class="correctAnswersArea">
  <h6>Correct answers: {{correctAnswers}}</h6> 
 </div>
 <div class="card" style="width: 18rem;">
     <div class="card-header" [innerHTML]="question?.question">
     </div>
-    <ul class="list-group list-group-flush">
+   
       <button 
       *ngFor="let answer of answersArr" 
       class="btn btn-primary"
       [ngClass]= "answer.classColorChange"
       [disabled]="getClicked()"
       (click)="checkAnswer(answer)">
-      <li class="list-group-item">{{answer.answer}}</li>
+      {{answer.answer}}
     </button>
-    </ul>
+    
 
    
   </div>
+  
+  <div class="questionsInf">
+  <p>Your Category: {{question?.category}}</p>
+  <p>Your difficulty: {{question?.difficulty}}</p>
+  <p>Your type: {{question?.type}}</p>
+</div>
  <button class="btn btn-secondary" routerLink="/">Reset</button>
