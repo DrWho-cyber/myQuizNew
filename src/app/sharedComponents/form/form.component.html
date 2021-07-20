@@ -1,9 +1,9 @@
 <div class="categoriesArea">
     <div class="input-group mb-3">
         <label class="input-group-text" for="inputGroupSelect01">Choose</label>
-        <select class="form-select" id="inputGroupSelect01">
+        <select (change)="takeId($event)" class="form-select" id="inputGroupSelect01">
             <option selected></option>
-            <option *ngFor="let category of categories; let i = index" value="i + 1">{{category.name}}
+            <option  [id]="category.id" *ngFor="let category of categories; let i = index" value="i + 1">{{category.name}}
             </option>
         </select>
     </div>

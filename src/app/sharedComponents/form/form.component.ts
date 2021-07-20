@@ -22,4 +22,9 @@ export class FormComponent implements OnInit {
     this.getQuestions(this.categoryApiUrl)
   }
 
+  takeId(event:Event){
+  let id = (event.target as HTMLElement)
+  console.log(id)
+  }
+
 }
