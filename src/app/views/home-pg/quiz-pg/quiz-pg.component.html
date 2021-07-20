@@ -1,6 +1,6 @@
 
 <div class="btnArea">
-    <app-button (btnClickEmit)="btnClickNextOrPrevQuestion(btn)" *ngFor="let btn of btnArr" [btn]="btn"></app-button>
+    <app-button (btnClickEmit)="btnClickNextQuestion()" *ngFor="let btn of btnArr" [btn]="btn"></app-button>
 </div>
 <div class="cardsArea">
 <app-card [question]="questions[currentIndex]"></app-card>

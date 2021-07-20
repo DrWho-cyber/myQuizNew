@@ -32,7 +32,6 @@ export class FormComponent implements OnInit {
   }
 
    onStartClick(){
-     this.title = "STARTED"
      this.route.navigate([`./quiz/${this.currentId}/${this.currentDifficaltyValue}/${this.currentType}`]);
    }
 }

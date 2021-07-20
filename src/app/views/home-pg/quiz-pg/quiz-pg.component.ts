@@ -8,7 +8,7 @@ import { ProxyHttpService } from 'src/app/services/proxy-http.service';
   styleUrls: ['./quiz-pg.component.css']
 })
 export class QuizPgComponent implements OnInit {
-  btnArr: string[] = ["Prev", "Next"];
+  btnArr: string[] = ["Next"];
   currentIndex:number = 0;
   questions:any[] = [];
   constructor(private proxy: ProxyHttpService,
@@ -28,15 +28,9 @@ export class QuizPgComponent implements OnInit {
     });
 }
 
-btnClickNextOrPrevQuestion (btn:string){
-  if(btn == "Next" && this.currentIndex != this.questions.length - 1){
-    this.currentIndex++
-    console.log(this.currentIndex,btn)}
-  else if (btn == "Prev" && this.currentIndex !=0) {
-    this.currentIndex-- 
-    console.log(this.currentIndex,btn)
-  }
- 
+btnClickNextQuestion (){
+  if(this.currentIndex != this.questions.length - 1){
+    this.currentIndex++}
 }
 
 
