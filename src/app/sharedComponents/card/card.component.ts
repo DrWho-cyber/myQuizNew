@@ -14,11 +14,12 @@ export class CardComponent implements OnInit {
 
   @Input() set question(event:any){
     if(event){
+    this.answersArr = []
     this._question = event;
     this.shuffle(this.answersArr);
     this.CheckanswersArrcreat()
     }
-    this.answersArr = []
+    
   };
 
   get question(){
