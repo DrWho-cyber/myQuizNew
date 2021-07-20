@@ -9,7 +9,7 @@ import { ProxyHttpService } from 'src/app/services/proxy-http.service';
 export class FormComponent implements OnInit {
   categoryApiUrl:string = "https://opentdb.com/api_category.php"
   categories:any[] = [];
-  
+  currentId:number = 0;
   constructor(private proxy: ProxyHttpService) { }
 
   getQuestions(apiUrl: string) {
@@ -22,9 +22,9 @@ export class FormComponent implements OnInit {
     this.getQuestions(this.categoryApiUrl)
   }
 
-  takeId(event:Event){
+  onselect(event:Event){
   let id = (event.target as HTMLElement)
-  console.log(id)
+  console.log(this.currentId, id)
   }
 
 }
