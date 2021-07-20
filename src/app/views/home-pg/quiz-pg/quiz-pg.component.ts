@@ -29,12 +29,14 @@ export class QuizPgComponent implements OnInit {
 }
 
 btnClickNextOrPrevQuestion (btn:string){
-  if(btn == "Next"){
-    this.currentIndex++}
-  else{
-    this.currentIndex--
+  if(btn == "Next" && this.currentIndex != this.questions.length - 1){
+    this.currentIndex++
+    console.log(this.currentIndex,btn)}
+  else if (btn == "Prev" && this.currentIndex !=0) {
+    this.currentIndex-- 
+    console.log(this.currentIndex,btn)
   }
-  console.log(this.currentIndex,btn)
+ 
 }
 
 
