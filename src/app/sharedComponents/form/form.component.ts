@@ -33,7 +33,7 @@ export class FormComponent implements OnInit {
     
   }
 
-   onStartClick(){ console.log(this.currentId, this.currentDifficaltyValue)
+   onStartClick(){
      this.route.navigate([`./quiz/${this.currentId}/${this.currentDifficaltyValue}/${this.currentType}`]);
      this.currentId = null;
      this.currentDifficaltyValue = "";

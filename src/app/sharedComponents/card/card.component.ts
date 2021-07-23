@@ -10,29 +10,36 @@ import Swal from 'sweetalert2';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-   _question: any;
+  @Input() timeLeft: number = 0;
+  _question: any;
   questionObject: QuestionModel = new QuestionModel("", "", "", "");
   answersArr: answersArrObjectModel[] = [];
-  correctAnswers:number = 0;
+  answersArrTemp: answersArrObjectModel = new answersArrObjectModel ("falseAnswer", false, "", false);
+  correctAnswers: number = 0;
 
-  @Input() set question(event:any){
-    if(event){
-    this.answersArr = []
-    this._question = event;
-    this.shuffle(this.answersArr);
-    this.CheckanswersArrcreat()
+  @Input() set question(event: any) {
+    if (event) { 
+      this.answersArr = []
+      this._question = event;
+      this.shuffle(this.answersArr);
+      this.CheckanswersArrcreat()
     }
-    
+
   };
 
-  get question(){
+  get question() {
     return this._question
   }
-  
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnChanges(){
+    if(this.timeLeft == 0){
+      this.checkAnswer(this.answersArrTemp)
+    }
   }
+
+  ngOnInit(): void {  }
 
   CheckanswersArrcreat() {
     this.questionObject.correct_answer = this.question.correct_answer;
@@ -62,8 +69,6 @@ export class CardComponent implements OnInit {
         array[randomIndex], array[currentIndex]];
     }
     arrIndex++
-    console.log(array[arrIndex].correct)
-
     return array;
   }
 
@@ -71,30 +76,31 @@ export class CardComponent implements OnInit {
     if (answer.answer == this.questionObject.correct_answer) {
       answer.classColorChange = "correctAnsw";
       this.answersArr.forEach(element => {
-        if (element != answer){
-        element.clicked = true}
+          element.clicked = true
+        
       });
       this.correctAnswers++
-      if(this.correctAnswers == 6){
+      if (this.correctAnswers == 6) {
         Swal.fire({
-        icon: 'success',
-        text: `You Won, You gained: ${this.correctAnswers} Correct Answer`})
+          icon: 'success',
+          text: `You Won, You gained: ${this.correctAnswers} Correct Answer`
+        })
       }
-      
+
     } else {
       answer.classColorChange = "incorrectAnsw";
       this.answersArr.forEach(element => {
-        if (element != answer){
-          element.clicked = true}
+          element.clicked = true
+          if(element.answer == this.questionObject.correct_answer){
+             element.classColorChange = "correctAnsw";
+          }
       });
-      
-
     }
-
   }
 
-  getClicked(){
-    return this.answersArr.find(x => x.clicked)
+  getClicked() {
+    let clickedBtn = this.answersArr.find(x => x.clicked)
+    return clickedBtn
   }
 
 }

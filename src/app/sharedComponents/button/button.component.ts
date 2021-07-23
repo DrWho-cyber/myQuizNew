@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-button',
@@ -6,17 +7,18 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
   styleUrls: ['./button.component.css']
 })
 export class ButtonComponent implements OnInit {
-  @Input()btn:string = "";
+  @Input()btn:any;
+  @Input()isDisabled:boolean = false;
   @Output() btnClickEmit = new EventEmitter();
-
+  
   constructor() { }
-
+ 
   ngOnInit(): void {
   }
 
   btnClick(btn:string){
-   this.btnClickEmit.emit(btn)
-   console.log(btn)
+   this.btnClickEmit.emit(btn) 
   }
+
 
 }

@@ -1,9 +1,5 @@
-.cardsArea {
-    position:absolute;
-    margin: auto;
-    top: 380px;
-    left:0px;
-    right: 0px;
+.cardsArea { 
+    margin: 10px auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -15,8 +11,9 @@
     width: 30%;
     position: relative;
     display: flex;
-    justify-content: flex-end;
-    margin: 30px auto;
+    justify-content: center;
+    text-align: center;
+    margin: 0px auto 10px;
     left:0px;
     right: 0px;
     z-index: 1;
@@ -24,6 +21,12 @@
 
 .btn:focus {
     box-shadow: none;
+}
+
+
+p{
+    margin-top: 10px;
+    text-align: center;
 }
 
 /* media screens */
@@ -35,8 +38,6 @@
 
     .btnArea {
         width: 50%;
-        justify-content: center;
-        margin: 20px auto;
     }
 }
 
