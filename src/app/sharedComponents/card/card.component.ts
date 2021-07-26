@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import { answersArrObjectModel } from 'src/app/models/answersArrObject.model';
 import { QuestionModel } from 'src/app/models/question.model';
 import Swal from 'sweetalert2';
@@ -30,6 +30,8 @@ export class CardComponent implements OnInit {
   get question() {
     return this._question
   }
+
+  @Output()cardClick = new EventEmitter()
 
   constructor() { }
 
@@ -73,6 +75,7 @@ export class CardComponent implements OnInit {
   }
 
   checkAnswer(answer: any) {
+    
     if (answer.answer == this.questionObject.correct_answer) {
       answer.classColorChange = "correctAnsw";
       this.answersArr.forEach(element => {
@@ -96,6 +99,9 @@ export class CardComponent implements OnInit {
           }
       });
     }
+    setTimeout(() => {
+      this.cardClick.emit(answer.answer)
+    }, 1000)
   }
 
   getClicked() {

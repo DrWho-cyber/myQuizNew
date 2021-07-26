@@ -1,6 +1,6 @@
 <p>Time Left: {{timeLeft}}</p>
 <div class="cardsArea">
-<app-card [question]="questions[currentIndex]" [timeLeft]="timeLeft"></app-card>
+<app-card (cardClick)="currentIndexIncr($event)" [question]="questions[currentIndex]" [timeLeft]="timeLeft"></app-card>
 </div>
 <div class="btnArea">
     <app-button (btnClickEmit)="btnClickNextQuestion()" *ngFor="let btn of btnArr" [btn]="btn"></app-button>
